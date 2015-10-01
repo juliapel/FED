@@ -1,0 +1,170 @@
+/*
+Author: Julia Pelgrim
+
+Source:
+
+This document was successfully checked as CSS3!
+
+Copyright © 2014 Julia Pelgrim. All rights reserved.
+*/
+
+/*Universal selector. border-box ipv content-box. De breedte en hoogte omvatten dan de border, padding en content, niet de margin.*/
+* {
+    box-sizing: border-box;
+}
+
+/*Type selector*/
+body {
+    color: #333;
+    font: 100%/1.5 helvetica;
+    margin: 0 auto; /*center a box on the page*/
+}
+
+/*Direct child selector*/
+body>header {
+    border: .1rem solid #333;
+    border-radius: .5rem / 10rem;
+    box-shadow: .5em .2em #333; /*x en y*/
+    left: 0;
+    margin: 1rem;
+    padding: .5rem;
+    position: absolute;
+    text-shadow: .2em .1em #ddd; /*x en y*/
+    top: 0;
+    -webkit-transform: skew(-2deg, -5deg);
+    -moz-transform: skew(-2deg, -5deg);
+    -ms-transform: skew(-2deg, -5deg);
+    -o-transform: skew(-2deg, -5deg);
+    transform: skew(-2deg, -5deg);
+    width: 15em;
+}
+
+aside {
+    border: inherit; /*overerving*/
+    border-radius: .5rem;
+    padding: .5rem;
+    position: absolute;
+    margin: 1rem;
+    right: 0;
+    top: 0;
+    width: 20%;
+}
+
+header>img {
+    width: 10em;
+}
+
+/*Attribute selector*/
+img[src$="beroepen.jpg"] + p {
+    font-style: italic;
+}
+
+main {
+    background-color: #dddddd;
+    margin-left: 20em;
+    margin-right: 10rem;
+    padding: 1rem;
+    position: static;
+    -webkit-transition: 1s; /*Voor sommige versies van Safari*/
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s; /*Voor IE10 hoef je geen prefix te gebruiken.*/
+    width: 30em;
+}
+
+main:hover {
+    background: pink;
+}
+
+/*Adjecent sibling selector*/
+h4+img {
+    width: 25em;
+}
+
+.related {
+    display: flex; /*Definieert de block-line flex container.*/
+    flex-direction: row; /*Definieert dat het naast elkaar wordt weergegeven.*/
+    justify-content: space-around; /*Items zijn verspreid met een gelijk aantal wit eromheen.*/
+}
+
+body>footer {
+
+}
+
+/*Adjecent sibling selector*/
+h2+p:first-letter {
+    font-size: 2em;
+}
+
+/*Pseudo classes*/
+a:link {
+    color: blue;
+}
+
+a:hover {
+    color: #333;
+}
+
+/*Descendant selectors en pseudo classes*/
+main li:nth-child(1) {
+    color: red;
+}
+
+main li:nth-child(2) {
+    color: green;
+}
+
+main li:nth-child(3) {
+    color: blue;
+}
+
+main li:nth-child(4) {
+    color: yellow;
+}
+
+main li:nth-child(5) {
+    color: purple;
+}
+
+fieldset {
+    border: 0;
+    border-radius: .5em;
+    padding: .5em;
+}
+
+input {
+    width: 100%;
+    margin: .3em;
+    padding: .3em;
+    font-size: 1em;
+    border-radius: .3em;
+    box-shadow: inset .1em .1em .2em #333;
+    border: none;
+    transition: .3s;
+}
+
+@media (max-width: 800px) {
+   main {
+       width: 25em;
+       font-size: 75%;
+       margin-left: 25em;
+    }
+    .related {
+    flex-wrap: wrap; /*Hij wordt nu over meerdere rijen verspreid.*/
+    }
+    aside {
+        position: static; /*Terug naar de normal flow.*/
+    }
+    h4+img {
+    width: 75%;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 20em; /*Wordt kleiner.*/
+    }
+    body>header {
+        display: none; /*Hij verdwijnt*/
+    }
+}
