@@ -175,7 +175,6 @@ main li:nth-child(5) {
     border-color: #34495e;
 }
 
-
 aside {
     background-color: #eef2f3;
     color: #9b9b9b;
@@ -413,6 +412,10 @@ section>ul {
         border-radius: .5rem / 10rem;
         padding: .5rem;
         margin-bottom: 1.25rem;
+        width: 95%;
+    }
+    .related>article a {
+        font-size: .75em;
     }
     aside {
         width: 100%;
@@ -420,6 +423,9 @@ section>ul {
     }
     body>footer {
         padding: 1.5rem;
+    }
+    #sitemap ul{
+        font-size: 1em;
     }
     #feedback {
         height: 4em;
@@ -435,7 +441,7 @@ section>ul {
 
 
 /* Hele grote schermen */
-@media only screen and (min-width: 80em) {
+@media only screen and (min-width: 81em) {
     body {
         flex-direction: row; /* Alles komt naast elkaar */
     }
