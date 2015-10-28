@@ -1,0 +1,489 @@
+/* Universal selector */
+* {
+    box-sizing: border-box; /* De browser telt de border mee */
+}
+
+/* Type selector */
+body {
+    display: flex;
+    flex-flow: row wrap; /* Naast elkaar, maar als het niet meer past onder elkaar */
+    color: #333;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Pseudo-classes */
+a:link {
+    color: #333;
+}
+
+a:hover {
+    color: #2c3e50;
+}
+
+a:visited {
+    color: #333;
+}
+
+/* Child selector */
+body>header {
+    background-image: url("/img/cmd_foto.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%; /* Over de gehele breedte */
+    order: 1;
+    text-align: left;
+    padding: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+body>header>h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5em;
+    text-align: center;
+    color: #fff;
+    text-shadow: .025em .025em #333; /* Eerste waarde hoe ver naar links of naar rechts, tweede waarde afstand tot bovenkant of onderkant */
+    order: 4;
+}
+
+/* General sibling selector */
+h1~p {
+text-shadow: .01em .01em #333;
+}
+
+/* Adjecent sibling selector */
+body>header>h1+p {
+    color: #fff;
+    text-shadow: .05em .05em #333;
+    order: 5;
+}
+
+.to-profile {
+    order: 2;
+    font-size: .75em;
+}
+
+body>header a:link {
+    color: #fff;
+    text-shadow: .05em .05em #333;
+}
+
+body>header a:hover {
+    color: #eef2f3;
+    text-shadow: .05em .05em #333;
+}
+
+body>header a:visited {
+    color: #fff;
+    text-shadow: .05em .05em #333;
+}
+body>header>form {
+    order: 3;
+}
+
+body>header label {
+    color: #fff;
+    text-shadow: .05em .05em #333;
+}
+
+/* Attribute selector */
+img[src$="img/cmd_logo.png"] {
+    width: 15%; /* 15% van het origineel */
+    height: 15%;
+    order: 0;
+}
+
+nav>ul {
+    list-style: none;
+    order: 1;
+    display: flex;
+}
+
+nav>ul li {
+    margin-right: 1rem;
+    text-shadow: .05em .05em #333;
+}
+
+main {
+    order: 2;
+    width: 75%;
+    padding: 7.5rem;
+}
+
+/* Het plaatje schaalt mee */
+picture img {
+    max-width: 100%;
+}
+
+/* De video schaalt mee */
+video {
+    max-width: 100%;
+}
+
+/* Descendent selector */
+main li:nth-child(1) {
+    color: #16a085;
+}
+
+main li:nth-child(2) {
+    color: #2980b9;
+}
+
+main li:nth-child(3) {
+    color: #f39c12;
+}
+
+main li:nth-child(4) {
+    color: #d35400;
+}
+
+main li:nth-child(5) {
+    color: #c0392b;
+}
+
+/* Class selector */
+.related {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    order: 4;
+    padding: 7.5rem;
+}
+
+.related>h2 {
+    flex-grow: 2;
+}
+
+.related>article {
+    display: flex;
+    flex-direction: row;
+    background-color: #eef2f3;
+    border: .35rem solid #ffcc00;
+    border-radius: .5rem / 10rem;
+    padding: .25rem;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+/* Pseudo classen deel 2 */
+.related>article:first-of-type {
+    border-color: #34495e;
+}
+
+.related>article:last-of-type {
+    border-color: #34495e;
+}
+
+
+aside {
+    background-color: #eef2f3;
+    color: #9b9b9b;
+    order: 3;
+    width: 25%;
+    padding: 2.5rem;
+}
+
+body>footer {
+    background-color: #eef2f3;
+    color: #9b9b9b;
+    width: 100%;
+    order: 5;
+    padding: 5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+footer ul {
+    list-style: none;
+}
+
+/* Id selector */
+#sitemap ul{
+    font-size: .75em;
+}
+
+#feedback {
+    background-color: #333;
+    border: .35rem solid #ffcc00;
+    border-radius: .5rem / 10rem;
+    color: #fff;
+    padding: 1rem;
+    height: 5em;
+}
+
+#feedback>a:link {
+    color: #eef2f3;
+}
+
+#feedback>a:hover {
+    color: #fff;
+}
+
+#feedback>a:visited {
+    color: #eef2f3;
+}
+
+fieldset {
+    border: 0; /* Zo zijn de lijntjes niet zichtbaar */
+    border-radius: .25rem;
+    box-shadow: .05em .05em .1em #333;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+legend {
+    position: static;
+}
+
+input {
+    width: 100%;
+    border-radius: .25rem;
+    box-shadow: .05em .05em .1em #333; /* Horizontaal, verticaal, blur */
+    border: none;
+    -webkit-transition: 1s; /* Safari 3.1 tot 6.0 */
+    transition: 1s;
+    margin: .25rem;
+    padding: .25rem;
+    font-size: 1em;
+}
+
+input:focus {
+    -ms-transform: rotate(.5deg); /* IE 9 */
+    -webkit-transform: rotate(.5deg); /* Chrome, Safari, Opera */
+    transform: rotate(.5deg);
+}
+
+input[type="radio"] {
+    box-shadow: none;
+}
+
+input[type="checkbox"] {
+    box-shadow: none;
+}
+
+textarea {
+    width: 100%;
+}
+
+section>ul {
+    list-style: none;
+}
+
+/* Icons */
+.pdf:before {
+    content: url(../img/pdf.gif);
+}
+
+.vcf:before {
+    content: url(../img/vcf.png);
+}
+
+.jpg:before {
+    content: url(../img/jpg.png);
+}
+
+.pdftwee:before {
+    content: url(../img/pdf.gif);
+}
+
+.vcftwee:before {
+    content: url(../img/vcf.png);
+}
+
+.jpgtwee:before {
+    content: url(../img/jpg.png);
+}
+
+.pdfdrie:before {
+    content: url(../img/pdf.gif);
+}
+
+.vcfdrie:before {
+    content: url(../img/vcf.png);
+}
+
+.jpgdrie:before {
+    content: url(../img/jpg.png);
+}
+
+/* Voor JavaScript */
+.weg {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/* Medium schermen */
+@media only screen and (max-width: 50em) {
+    body {
+        font-size: 90%;
+    }
+    body>header {
+        text-align: center;
+        flex-direction: column; /* Alles onder elkaar */
+    }
+    nav>ul {
+        list-style: none;
+        justify-content: space-around; /* Ruimte eromheen, mooi verspreid over de hele header */
+    }
+    img[src$="img/cmd_logo.png"] {
+        width: 30%; /* T.o.v. het origineel */
+        height: 30%;
+    }
+    main {
+        padding: 3rem;
+        width: 66%;
+    }
+    img[src$="img/beroepen.jpg"] {
+        width: 90%;
+    }
+    input {
+        font-size: 1.5em;
+    }
+    .related {
+        padding: 5rem;
+    }
+    .related>article {
+        flex-direction: column; /* Binnen het artikel alles naar beneden */
+        background-color: #eef2f3;
+        border: .30rem solid #ffcc00;
+        border-radius: .5rem / 10rem;
+        padding: .75rem;
+        margin-bottom: 1.25rem;
+    }
+    aside {
+        padding: 1rem;
+        width: 33%;
+    }
+    body>footer {
+        padding: 5rem;
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+/* Kleine schermen */
+@media only screen and (max-width: 37.5em) {
+    body {
+        flex-direction: column; /* Alles komt onder elkaar */
+        font-size: 1em;
+        line-height: 1.75em; /* Beter leesbaar voor mobiel */
+    }
+    body>header>h1 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    nav>ul {  /* Top Nav or “Do Nothing” Approach */
+        list-style: none;
+        flex-direction: column;
+        text-align: center;
+    }
+    img[src$="img/cmd_logo.png"] {
+        width: 100%;
+        height: 100%;
+    }
+    main {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    input {
+        font-size: 2em;
+    }
+    .related {
+        width: 100%;
+        padding: .5rem;
+    }
+    .related>article {
+        background-color: #eef2f3;
+        border: .25rem solid #ffcc00;
+        border-radius: .5rem / 10rem;
+        padding: .5rem;
+        margin-bottom: 1.25rem;
+    }
+    aside {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    body>footer {
+        padding: 1.5rem;
+    }
+    #feedback {
+        height: 4em;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Hele grote schermen */
+@media only screen and (min-width: 80em) {
+    body {
+        flex-direction: row; /* Alles komt naast elkaar */
+    }
+    body>header {
+        width: 20%;
+        color: #333;
+        display: inline; /* Alles mooi onder elkaar zonder dat het verspreid wordt */
+    }
+    body>header>h1 {
+        font-size: 300%; /* Percentage t.o.v. de eerder vastgestelde em */
+        color: #333;
+        text-shadow: none;
+    }
+    body>header>h1+p {
+        color: #333;
+        text-shadow: none;
+    }
+    nav>ul {
+        list-style: none;
+        flex-direction: column;
+        text-align: center;
+    }
+    img[src$="img/cmd_logo.png"] {
+        width: 100%;
+        height: 100%;
+    }
+    main {
+        width: 60%;
+    }
+    .related {
+        flex-flow: row wrap; /* Naast elkaar, maar als het niet past onder elkaar */
+        width: 100%;
+    }
+    .related>h2 {
+        margin-left: 20rem;
+        margin-right: 20rem;
+        width: 100%;
+    }
+    .related>article {
+        flex-direction: column; /* Binnenin onder elkaar */
+        width: 30%;
+        margin: 1.25rem;
+        padding: 1.25rem;
+    }
+    aside {
+        width: 20%;
+    }
+    body>footer {
+        width: 100%;
+    }
+}
